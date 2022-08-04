@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04F15F06289BFAB100EB72FE /* SmsShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F15F05289BFAB100EB72FE /* SmsShare.m */; };
 		4EED9CAF24F5A2EB006505C4 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EED9CAE24F5A2EB006505C4 /* Utils.m */; };
 		6D697F8423A86EBC00F754A1 /* RNShareActivityItemSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D697F8323A86EBC00F754A1 /* RNShareActivityItemSource.m */; };
 		B33C22851D441713006BCD98 /* GenericShare.m in Sources */ = {isa = PBXBuildFile; fileRef = B33C22841D441713006BCD98 /* GenericShare.m */; };
@@ -32,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04F15F04289BFAB100EB72FE /* SmsShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsShare.h; sourceTree = "<group>"; };
+		04F15F05289BFAB100EB72FE /* SmsShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsShare.m; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNShare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNShare.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EED9CAD24F5A2EB006505C4 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		4EED9CAE24F5A2EB006505C4 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 		B33C22801D43F9B0006BCD98 /* social */ = {
 			isa = PBXGroup;
 			children = (
+				04F15F04289BFAB100EB72FE /* SmsShare.h */,
+				04F15F05289BFAB100EB72FE /* SmsShare.m */,
 				CE0C76361E9E7DE100ED396E /* InstagramShare.m */,
 				CE0C76621E9E869300ED396E /* InstagramShare.h */,
 				B33C22841D441713006BCD98 /* GenericShare.m */,
@@ -166,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F15F06289BFAB100EB72FE /* SmsShare.m in Sources */,
 				F1A1AD582444B09B00E32E33 /* FacebookStories.m in Sources */,
 				6D697F8423A86EBC00F754A1 /* RNShareActivityItemSource.m in Sources */,
 				CE0C76371E9E7DE100ED396E /* InstagramShare.m in Sources */,
