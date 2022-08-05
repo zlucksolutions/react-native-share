@@ -2,7 +2,7 @@
 //  SmsShare.h
 //  RNShare
 //
-//  Created by Diseño Uno BBCL on 23-07-16.
+//  Created by Zluck Solutions on 04-08-22.
 //  Copyright © 2016 Facebook. All rights reserved.
 //
 

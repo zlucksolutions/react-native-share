@@ -2,12 +2,12 @@
 //  SmsShare.m
 //  RNShare
 //
-//  Created by Diseño Uno BBCL on 23-07-16.
+//  Created by Zluck Solutions on 04-08-22.
 //  Copyright © 2016 Facebook. All rights reserved.
 //
 
 #import "SmsShare.h"
-#import "Utils.h"
+#import "RNShareUtils.h"
 
 
 @implementation SmsShare
@@ -82,7 +82,7 @@
                             filename = [filename stringByAppendingString: [@"." stringByAppendingString:ext]];
                         }
                         else if (isDataScheme){
-                            NSString *ext = [Utils getExtensionFromBase64: URL.absoluteString];
+                            NSString *ext = [RNShareUtils getExtensionFromBase64: URL.absoluteString];
                             
                             if(ext){
                                 filename = [filename stringByAppendingString: [@"." stringByAppendingString:ext]];
@@ -124,6 +124,13 @@
 }
 
 - (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result error:(nullable NSError *)error{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIViewController *ctrl = RCTPresentedViewController();
+        [ctrl dismissViewControllerAnimated:YES completion:NULL];
+    });
+}
+
+- (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
     dispatch_async(dispatch_get_main_queue(), ^{
         UIViewController *ctrl = RCTPresentedViewController();
         [ctrl dismissViewControllerAnimated:YES completion:NULL];
