@@ -95,7 +95,7 @@
                     }
 
                     // These checks basically make sure it's an MMS capable device with iOS7
-                    if([MFMessageComposeViewController respondsToSelector:@selector(canSendAttachments)] && [MFMessageComposeViewController canSendAttachments])
+                    if([MFMessageComposeViewController canSendAttachments])
                     {
                       [mc addAttachmentData:data typeIdentifier:@"public.data" filename:@"image.png"];
                     }
