@@ -123,25 +123,25 @@
     }
 }
 
-//- (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result error:(nullable NSError *)error{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        UIViewController *ctrl = RCTPresentedViewController();
-//        [ctrl dismissViewControllerAnimated:YES completion:NULL];
-//    });
-//}
-
-- (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UIViewController *ctrl = RCTPresentedViewController();
-        [ctrl dismissViewControllerAnimated:YES completion:NULL];
-        if (result == MessageComposeResultCancelled) {
-          NSLog(@"Message cancelled");
-        } else if (result == MessageComposeResultSent) {
-          NSLog(@"Message sent");
-        } else {
-          NSLog(@"Message failed");
-        }
-    });
+- (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result error:(nullable NSError *)error{
+   dispatch_async(dispatch_get_main_queue(), ^{
+       UIViewController *ctrl = RCTPresentedViewController();
+       [ctrl dismissViewControllerAnimated:YES completion:NULL];
+   });
 }
+
+// - (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+//     dispatch_async(dispatch_get_main_queue(), ^{
+//         UIViewController *ctrl = RCTPresentedViewController();
+//         [ctrl dismissViewControllerAnimated:YES completion:NULL];
+//         if (result == MessageComposeResultCancelled) {
+//           NSLog(@"Message cancelled");
+//         } else if (result == MessageComposeResultSent) {
+//           NSLog(@"Message sent");
+//         } else {
+//           NSLog(@"Message failed");
+//         }
+//     });
+// }
 
 @end
