@@ -111,8 +111,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             UIViewController *ctrl = RCTPresentedViewController();
           
-            // Present mail view controller on screen
-            [ctrl presentViewController:mc animated:YES completion:nil];
+            // Present sms view controller on screen
+            [ctrl presentViewController:mc animated:YES completion:NULL];
             
             // We could fire this either here or
             // on the finish delegate.
@@ -123,28 +123,27 @@
     }
 }
 
-// - (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result error:(nullable NSError *)error{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        UIViewController *ctrl = RCTPresentedViewController();
-//        [ctrl dismissViewControllerAnimated:YES completion:NULL];
-//    });
-// }
-
 - (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result error:(nullable NSError *)error{
-    NSLog(@"Got result");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"dispatch_get_main_queue");
-         UIViewController *ctrl = RCTPresentedViewController();
-         [ctrl dismissViewControllerAnimated:YES completion:nil];
-//        [self dismissViewControllerAnimated:YES completion:NULL];
-        if (result == MessageComposeResultCancelled) {
-          NSLog(@"Message cancelled");
-        } else if (result == MessageComposeResultSent) {
-          NSLog(@"Message sent");
-        } else {
-          NSLog(@"Message failed");
-        }
-    });
+   NSLog(@"Got result");
+   if (result == MessageComposeResultCancelled) {
+     NSLog(@"Message cancelled");
+   } else if (result == MessageComposeResultSent) {
+     NSLog(@"Message sent");
+   } else {
+     NSLog(@"Message failed");
+   }
+   dispatch_async(dispatch_get_main_queue(), ^{
+       NSLog(@"dispatch_get_main_queue");
+        UIViewController *ctrl = RCTPresentedViewController();
+        [ctrl dismissViewControllerAnimated:YES completion:NULL];
+   });
 }
+
+// - (void)messageComposeViewController:(nonnull MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+//     dispatch_async(dispatch_get_main_queue(), ^{
+//          UIViewController *ctrl = RCTPresentedViewController();
+//          [ctrl dismissViewControllerAnimated:YES completion:NULL];
+//     });
+// }
 
 @end
